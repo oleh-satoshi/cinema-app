@@ -3,3 +3,4 @@
 ![](src/main/resources/images/2-features.png)
 ![](src/main/resources/images/3-structure.png)
 ![](src/main/resources/images/4-technologies.png)
+![](src/main/resources/images/5-howToOpen.png)
