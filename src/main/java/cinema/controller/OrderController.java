@@ -40,7 +40,7 @@ public class OrderController {
         User user = userService.findByEmail(email).orElseThrow(
                 () -> new RuntimeException("User with email " + email + " not found"));
         ShoppingCart cart = shoppingCartService.getByUser(user);
-        return orderResponseDtoMapper.mapToDto(orderService.completeOrder(cart));
+        return orderResponseDtoMapper.toDto(orderService.completeOrder(cart));
     }
 
     @GetMapping
@@ -50,7 +50,7 @@ public class OrderController {
                 () -> new RuntimeException("User with email " + email + " not found"));
         return orderService.getOrdersHistory(user)
                 .stream()
-                .map(orderResponseDtoMapper::mapToDto)
+                .map(orderResponseDtoMapper::toDto)
                 .collect(Collectors.toList());
     }
 }

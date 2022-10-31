@@ -19,7 +19,7 @@ public class MovieSessionMapper implements RequestDtoMapper<MovieSessionRequestD
     }
 
     @Override
-    public MovieSession mapToModel(MovieSessionRequestDto dto) {
+    public MovieSession toModel(MovieSessionRequestDto dto) {
         MovieSession movieSession = new MovieSession();
         movieSession.setMovie(movieService.get(dto.getMovieId()));
         movieSession.setCinemaHall(cinemaHallService.get(dto.getCinemaHallId()));
@@ -28,7 +28,7 @@ public class MovieSessionMapper implements RequestDtoMapper<MovieSessionRequestD
     }
 
     @Override
-    public MovieSessionResponseDto mapToDto(MovieSession movieSession) {
+    public MovieSessionResponseDto toDto(MovieSession movieSession) {
         MovieSessionResponseDto responseDto = new MovieSessionResponseDto();
         responseDto.setMovieSessionId(movieSession.getId());
         responseDto.setCinemaHallId(movieSession.getCinemaHall().getId());

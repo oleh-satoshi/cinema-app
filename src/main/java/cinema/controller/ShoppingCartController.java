@@ -52,6 +52,6 @@ public class ShoppingCartController {
         String email = details.getUsername();
         User user = userService.findByEmail(email).orElseThrow(
                 () -> new RuntimeException("User with email " + email + " not found"));
-        return shoppingCartResponseDtoMapper.mapToDto(shoppingCartService.getByUser(user));
+        return shoppingCartResponseDtoMapper.toDto(shoppingCartService.getByUser(user));
     }
 }
