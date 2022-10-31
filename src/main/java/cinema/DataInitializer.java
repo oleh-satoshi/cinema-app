@@ -1,4 +1,4 @@
-package cinema.config;
+package cinema;
 
 import cinema.model.Role;
 import cinema.model.User;
@@ -6,7 +6,9 @@ import cinema.service.RoleService;
 import cinema.service.UserService;
 import java.util.Set;
 import javax.annotation.PostConstruct;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DataInitializer {
     private final RoleService roleService;
     private final UserService userService;

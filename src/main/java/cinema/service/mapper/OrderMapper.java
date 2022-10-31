@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderMapper implements ResponseDtoMapper<OrderResponseDto, Order> {
     @Override
-    public OrderResponseDto mapToDto(Order order) {
+    public OrderResponseDto toDto(Order order) {
         OrderResponseDto responseDto = new OrderResponseDto();
         responseDto.setId(order.getId());
         responseDto.setUserId(order.getUser().getId());
